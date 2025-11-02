@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>React Basics</title>
-  </head>
-  <body>
-    <div class="js-container">
-        <h1>Hello world</h1>
-    </div>
 
-    <script src="https://unpkg.com/supersimpledev/react.js"></script>
-    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+<head>
+  <title>React Basics</title>
+</head>
 
-    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
-    <script type="text/babel">
-      const button = <button>Hello</button>; 
-      const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(button)
-    </script>
-    <script src="react-basic.js"/>
-  </body>
+<body>
+  <div class="js-container">
+   
+  </div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+  <script type="text/babel">
+ 
+
+    // Exersecise 1
+    const socketprice = 10 + 8;
+    const div = (
+      <div>
+        <p>Cotton sockes</p>
+        
+        <p>Price:${socketprice}</p>
+        <button>Add to Cart</button>
+
+      </div>
+    );
+    // Exersecise 1
+
+     // Exersecise 2
+     const productCost = 10+ 2*8;
+
+     console.log(productCost);
+      // Exersecise 2
+
+      // Exersecise 3
+      const productParg = <p>productCost:${productCost}</p>
+      // Exersecise 3
+      
+      // Exersecise 4
+      const shipingcost = 5;
+      const totalcost = productCost+shipingcost;
+    
+      const div1 = (
+      <div>
+         <p>Product Cost:${productCost}</p>
+        <p>Shiping Cost:${shipingcost}</p> 
+        <p>Total Cost:${totalcost}</p>
+
+        <button>Place yor order</button>
+        </div>  
+        
+      );
+      // Exersecise 4
+    const container = document.querySelector('.js-container');
+    ReactDOM.createRoot(container).render(div1)
+  </script>
+  <script src="react-basic.js"></script>
+</body>
+
 </html>

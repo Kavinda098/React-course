@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chatbot</title>
+</head>
+
+<body>
+  <div class="js-container">
+
+  </div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+  <script type="text/babel">
+
+    function ChatInput() {
+
+      return (
+        <>
+          <input
+            type="text" placeholder="Send a message to chatbot"
+            size="30"
+          />
+          <button>Send</button>
+        </>
+      );
+
+    }
+
+    function ChatMessage({ message, sender }) {
+      // const message = props.message;
+      // const sender = props.sender;
+
+      // const{message,sender} = props;
+
+      //First one to useing if statement in outside of jsx
+      /*
+        if (sender === "robot") {
+          return (
+            <div>
+              {message}
+              <img src="robot.png" width="40" />
+            </div>
+          );
+        } else {
+          return (
+            <div>
+              <img src="user.png" width="40" /> 
+              {message}
+  
+            </div>
+          );
+        }
+      */
+
+
+      //second one to using if statement inside of jsx
+      return (
+        <div>
+          {sender === 'robot' && (
+            <img src="robot.png" width="40" />
+          )}
+          {message}
+          {sender === 'user' &&
+            (<img src="user.png" width="40" />
+
+            )}
+        </div>
+
+      );
+    }
+
+    function App() {
+      return (
+        <>
+          <ChatInput />
+          <ChatMessage
+            message="hello chatbot"
+            sender="user"
+          />
+          <ChatMessage
+            message="hello! how can you help you"
+            sender="robot"
+          />
+          <ChatMessage
+            message="can you get me date today"
+            sender="user"
+          />
+          <ChatMessage
+            message="sure! today's date is November 2, 2025"
+            sender="robot"
+          />
+        </>
+      );
+    }
+
+    const container = document.querySelector('.js-container');
+    ReactDOM.createRoot(container).render(<App />)
+  </script>
+  <script src="react-basic.js"></script>
+</body>
+
+</html>
